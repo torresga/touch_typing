@@ -1,0 +1,26 @@
+body { margin: 0 auto; }
+
+#first-row, #second-row, #third-row { 
+  text-align: center;
+  width: 100%;
+  margin: 0 auto; 
+  float: left;
+}
+
+.key {
+  width: 70px;
+  height: 70px;
+  background-color: magenta;
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  float: left;
+  margin: 10px;
+}
+
+#text-to-type {
+  width: 400px;
+  text-align: center;
+  font-size: 100px;
+  margin: 0 auto;
+}
