@@ -22,11 +22,10 @@ $(document).ready(function() {
     var keypressed = String.fromCharCode(e.keyCode);
     if (keypressed.toUpperCase() == $(letter).text()) {
       var newLetter = getRandomKey();
-      $(newLetter).css("background-color", "blue");
+      console.log(newLetter);
       $(".key:contains(" + $(letter).text() + ")").css("background-color", "magenta");
+      $(newLetter).css("background-color", "blue");
       setTextToType(newLetter);
-      // define letter down here
-      // oh yeah i should probably commit this
       letter = newLetter;
     }
   });
