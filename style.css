@@ -1,22 +1,64 @@
-body { margin: 0 auto; }
-
-#first-row, #second-row, #third-row { 
+body { 
+  font-family: Helvetica, sans-serif;
   text-align: center;
-  width: 100%;
-  margin: 0 auto; 
-  float: left;
 }
 
-.key {
-  width: 70px;
-  height: 70px;
-  background-color: magenta;
-  font-size: 50px;
+li { list-style: none; }
+
+main {
+  display: block;
+  width:100%;
+}
+
+#keyboard {
+  background-color: #d8d8d8;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 92%;
+  margin: 0 auto;
+}
+
+#number-row, #first-row, #second-row, #third-row, #fourth-row { 
+  margin: 0.5em 0 0.5em 0;
+}
+
+.key, .alt-key {
+  width: 3em;
+  height: 3em;
+  padding: 0.5em;
+  float: left;
+  border-radius: 15px;
+
+  background-color: #1f1a1e;
+  font-size: 100%;
   color: white;
   text-align: center;
-  float: left;
-  margin: 10px;
+  
+  margin: 0 0.3em 0 0.3em;
 }
+
+#delete, #tab {
+  width: 6em;
+}
+
+#capslock, #return {
+  width: 8em;
+}
+
+#shift-left, #shift-right {
+  width: 10em;
+}
+
+#command-left, #command-right {
+  width: 5em;
+}
+
+#space { width: 22em;}
+
 
 #text-to-type {
   width: 400px;
