@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   var getRandomKey = function() {
-    keys = $(".key");
+    keys = $(".key").text().replace(/\s/g, "").split("");
 
     var randomNumber = Math.floor(Math.random() * keys.length);
     var randomKey = keys[randomNumber];
@@ -9,13 +9,13 @@ $(document).ready(function() {
   }
 
   var setTextToType = function(letter) {
-    $("#text-to-type").text($(letter).text());
+    $("#text-to-type").text(letter);
   }
   
   var letter = getRandomKey();
   //var letter = $("#text-to-type").text();
   // find text in dom that matches letter
-  $(".key:contains(" + $(letter).text() + ")").css("background-color", "blue");
+  $(".key:contains(" + letter + ")").css("background-color", "blue");
   setTextToType(letter);
 
 
@@ -24,12 +24,18 @@ $(document).ready(function() {
     // if keyCode is less than 65 chances are it's punctuation
     // keyCodes from 91 to 96 are also punctuation
     // so are 123 to 126
-    debugger;
-    if (keypressed.toUpperCase() == $(letter).text()) {
+
+    //if lowercase letters
+    if (96 < keypressed < 123) {
+      keypressed = keypressed.toUpperCase()
+    }
+
+    if (keypressed == letter) {
+      // debugger;
       var newLetter = getRandomKey();
       console.log(newLetter);
-      $(".key:contains(" + $(letter).text() + ")").css("background-color", "#1f1a1e");
-      $(newLetter).css("background-color", "blue");
+      $(".key:contains(" + letter + ")").css("background-color", "#1f1a1e");
+      $(".key:contains(" + newLetter + ")").css("background-color", "blue");
       setTextToType(newLetter);
       letter = newLetter;
     }
