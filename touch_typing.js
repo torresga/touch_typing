@@ -13,7 +13,6 @@ $(document).ready(function() {
   }
   
   var letter = getRandomKey();
-  //var letter = $("#text-to-type").text();
   // find text in dom that matches letter
   $(".key:contains(" + letter + ")").css("background-color", "blue");
   setTextToType(letter);
@@ -31,7 +30,6 @@ $(document).ready(function() {
     }
 
     if (keypressed == letter) {
-      // debugger;
       var newLetter = getRandomKey();
       console.log(newLetter);
       $(".key:contains(" + letter + ")").css("background-color", "#1f1a1e");
